@@ -17,8 +17,10 @@ git commit -m "initial commit."
 ## コンテンツの書き方
 
 要は Markdown でガシガシ書くだけ。
+Markdown の flavor は [GitHub Flavored Markdown](http://qiita.com/qurage/items/a2f3f52c60d7c64b2e08)だ。
 
-`/SUMMARY.md`は全体の目次となるファイルで必須。
+`/SUMMARY.md`は全体の目次となるファイル。
+Optionalだが `gitbook init`でも生成されるし、各種文書でも使われているので、ほぼ必須。
 `/SUMMARY.md`からリンクを張ったファイルが読み込まれて文書となる。
 最初は、次のようになっているはずだ。
 

@@ -1,3 +1,10 @@
 {
-    "plugins": ["-sharing","hide-published-with"]
+    "plugins": [
+        "-sharing",
+        "hide-published-with",
+         "numbered-headings-for-web-and-books"],
+    "styles": {
+        "pdf": "my_pdf.css"
+    }
 }
+

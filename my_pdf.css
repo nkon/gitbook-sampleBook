@@ -1,0 +1,5 @@
+.page .section h1:before {
+  content: counter(h1) ". ";;
+  padding-right: 5px;
+  counter-increment: h1;
+}
