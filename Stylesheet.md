@@ -5,7 +5,7 @@
 `/book.json`に設定を書くことができる。まずは基本的な設定から。
 
 Twitterなどのシェアボタンを消す。
-```
+```javascript
 {
     "plugins": ["-sharing"]
 }
@@ -13,7 +13,7 @@ Twitterなどのシェアボタンを消す。
 
 Published with GitBookリンクを消す。
 
-```json:book.json
+```javascript
 {
     "plugins": ["-sharing","hide-published-with"]
 }
@@ -26,7 +26,7 @@ Published with GitBookリンクを消す。
 
 ## 章番号を付ける
 
-```json:book.json
+```javascript
 {
     "plugins": ["-sharing","hide-published-with", "numbered-headings-for-web-and-books"]
 }
@@ -49,7 +49,7 @@ https://www.npmjs.com/package/gitbook-plugin-numbered-headings-for-web-and-books
 デフォルトの場合、PDF生成物には、H1章番号と章タイトルの間に何もなくて見かけが悪いので修正する(HTMLの方はドットが入っている)。
 
 `/book.json`にてスタイルファイルを指定。
-```
+```javascript
 {
     "styles": {
         "pdf": "my_pdf.css"
@@ -57,7 +57,7 @@ https://www.npmjs.com/package/gitbook-plugin-numbered-headings-for-web-and-books
 }
 ```
 指定したスタイルファイルに次を記載。
-```
+```css
 .page .section h1:before {
   content: counter(h1) ". ";;
   padding-right: 5px;

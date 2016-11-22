@@ -7,6 +7,7 @@
 gitbook init
 ```
 `.gitignore`、`SUMMARY.md`、`README.md`の３つのファイルが作成される。
+`.gitignore`まで生成されるのが今風だ。
 
 ついでなので、Git リポジトリも初期化しておく。
 ```
@@ -24,7 +25,7 @@ Optionalだが `gitbook init`でも生成されるし、各種文書でも使わ
 `/SUMMARY.md`からリンクを張ったファイルが読み込まれて文書となる。
 最初は、次のようになっているはずだ。
 
-```md:/SUMMARY.md
+```md
 
 # Summary
 
