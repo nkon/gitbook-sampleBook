@@ -8,7 +8,7 @@ gitbook init
 ```
 `.gitignore`、`SUMMARY.md`、`README.md`の３つのファイルが作成される。
 
-ついでなので、git リポジトリも初期化しておく。
+ついでなので、Git リポジトリも初期化しておく。
 ```
 git init
 git commit -m "initial commit."
@@ -33,8 +33,6 @@ Optionalだが `gitbook init`でも生成されるし、各種文書でも使わ
 
 `/README.md`に文書を書いていけば良いのだが、章立てごとにディレクトリを分けても良い。
 各ディレクトリには `README.md`を置いて章のまとめとしておこう。
-
-
 
 
 ### 図の埋め込み

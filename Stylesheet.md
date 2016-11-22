@@ -46,7 +46,7 @@ https://www.npmjs.com/package/gitbook-plugin-numbered-headings-for-web-and-books
 `plugins`に指定するのは、`gitbook-plugin-`を除いたパッケージ名になる。
 インストールされたプラグインは、`~/.npm/パッケージ名/`に入るので、それを読めば、簡単なものであれば改造や設定は容易だ。
 
-デフォルトで、PDFの方には、H1章番号と、章タイトルの間に何もなくて見かけが悪いので修正する(HTMLの方はドットが入っている)。
+デフォルトの場合、PDF生成物には、H1章番号と章タイトルの間に何もなくて見かけが悪いので修正する(HTMLの方はドットが入っている)。
 
 `/book.json`にてスタイルファイルを指定。
 ```
