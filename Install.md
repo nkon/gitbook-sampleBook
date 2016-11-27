@@ -14,3 +14,5 @@ apt-get してしまうのが、きっと楽なのだろう。
 
 ## textlint
 
+## GitHubとGitbookの連携
+
