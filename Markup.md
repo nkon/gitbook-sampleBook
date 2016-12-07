@@ -1,6 +1,10 @@
 
 # 代表的なスタイル
 
+公式のマニュアルはこちらに。
+https://github.com/GitbookIO/gitbook/blob/master/docs/syntax/markdown.md
+
+
 ## 見出し
 
 ```
