@@ -6,10 +6,10 @@
 ```
 gitbook init
 ```
-`.gitignore`、`SUMMARY.md`、`README.md`の３つのファイルが作成される。
+`.gitignore`、`SUMMARY.md`、`README.md`の3つのファイルが作成される。
 `.gitignore`まで生成されるのが今風だ。
 
-ついでなので、Git リポジトリも初期化しておく。
+ついでなので、Gitリポジトリも初期化しておく。
 ```
 git init
 git commit -m "initial commit."
@@ -17,8 +17,8 @@ git commit -m "initial commit."
 
 ## コンテンツの書き方
 
-要は Markdown でガシガシ書くだけ。
-Markdown の flavor は [GitHub Flavored Markdown](http://qiita.com/qurage/items/a2f3f52c60d7c64b2e08)だ。
+要はMarkdownでガシガシ書くだけ。
+Markdownのflavorは [GitHub Flavored Markdown](http://qiita.com/qurage/items/a2f3f52c60d7c64b2e08)だ。
 
 `/SUMMARY.md`は全体の目次となるファイル。
 Optionalだが `gitbook init`でも生成されるし、各種文書でも使われているので、ほぼ必須。
@@ -38,8 +38,11 @@ Optionalだが `gitbook init`でも生成されるし、各種文書でも使わ
 
 ### 図の埋め込み
 
+![sample.gif](sample.gif)
+
 ### 表の埋め込み
 
-## textlint でチェック
-
-### 推奨するルール
+| タイトル | 要素 |
+|----------|------|
+| 表の例   | ほげ |
+| 表の例   | ふが |

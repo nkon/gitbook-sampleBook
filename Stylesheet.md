@@ -42,21 +42,27 @@ Published with GitBookリンクを消す。
 
 https://www.npmjs.com/package/gitbook-plugin-numbered-headings-for-web-and-books
 
-だいたい、npm リポジトリの検索で、gitbook-plugin で検索すれば良い。
+だいたい、npmリポジトリの検索で、gitbook-pluginで検索すれば良い。
 `plugins`に指定するのは、`gitbook-plugin-`を除いたパッケージ名になる。
 インストールされたプラグインは、`~/.npm/パッケージ名/`に入るので、それを読めば、簡単なものであれば改造や設定は容易だ。
 
 デフォルトの場合、PDF生成物には、H1章番号と章タイトルの間に何もなくて見かけが悪いので修正する(HTMLの方はドットが入っている)。
 
+http://qiita.com/nutti/items/96e7194c82b8d04382e2
+
 `/book.json`にてスタイルファイルを指定。
+
 ```javascript
 {
     "styles": {
+        "webstyle" : "my_website.css",
         "pdf": "my_pdf.css"
     }
 }
 ```
+
 指定したスタイルファイルに次を記載。
+
 ```css
 .page .section h1:before {
   content: counter(h1) ". ";;
@@ -66,75 +72,66 @@ https://www.npmjs.com/package/gitbook-plugin-numbered-headings-for-web-and-books
 
 ```
 
+## 表紙が気に入らない
 
-## 代表的なスタイル
+PDF版では、表紙の"Table of Contens" に"1." と不要な番号が付くので抑制する。
 
-### 見出し
-
-```
-# 見出し1
-## 見出し2
-### 見出し3
-```
-
-# 見出し1
-## 見出し2
-### 見出し3
-
-
-### 箇条書き
+`my_pdf.css`に次のように指定。
 
 ```
-* 箇条書き1
-    + 箇条書き2
-        - 箇条書き3
+.page .section.toc h1:before{
+  display: none;
+}
 ```
 
-* 箇条書き1(決まりはないのだが、ルールとして * → + → - と使うように)
-    + 箇条書き2
-        - 箇条書き3
+### ページテンプレートの編集
+
+デフォルトのページテンプレートは次のところにある。
+
+`C:\Users\mm05681\AppData\Roaming\npm\node_modules\gitbook\node_modules\gitbook-plugin-theme-default\_layouts`
+
+これを`/_layouts/`にコピーして編集すれば、さらにカスタマイズが可能だ。
+
+表紙に章が並ぶが、PDF版の場合は、変な番号が付いてしまうので、それを削除する。
+
+`/_layouts/ebook/summary.html`を次のように編集する。
+
+* summary
+  + part(章)
+    - article(節)
+
+このようなデータ構造になっているので、自分の文章の構成によって、どのレベルのループを回すかを編集する。
 
 
 ```
-1. 箇条書き1
-    1. 箇条書き2(4個以上のスペースでネストを表す)
-1. 箇条書き1(先頭の数字は無視される)
+｛% block page %}
+<div class="section toc">
+    <h1>｛｛ "SUMMARY"|t ｝｝</h1>
+    <ol>
+        ｛% for part in summary.parts %｝
+            ｛% if part.title %｝
+            <li class="part-title">
+                <h2>｛｛ part.title ｝｝</h2>
+            </li>
+            ｛% endif %｝
+<!--            ｛｛ articles(part.articles) ｝｝ -->
+            ｛% for article in part.articles %｝
+            <li>｛｛ article.title ｝｝</li>
+            ｛% endfor %｝
+
+            ｛% if not loop.last %｝
+            <li class="divider"></li>
+            ｛% endif %｝
+        ｛% endfor %｝
+
+        ｛% if glossary.path %｝
+        <li>
+            <span class="inner">
+                <a href="｛｛ ('/' + glossary.path)|contentURL ｝｝">｛｛ "GLOSSARY"|t ｝｝</a>
+            </span>
+        </li>
+        ｛% endif %｝
+    </ol>
+</div>
+｛% endblock %｝
 ```
-
-1. 箇条書き1
-    1. 箇条書き2(4個以上のスペースでネストを表す)
-1. 箇条書き1(先頭の数字は無視される)
-
-```
-<dl>
-<dt>定義
-<dd>説明
-<dt>定義付きリスト
-<dd>定義付きリストは、HTML の`&lt;dl&gt;`タグを使う
-</dl>
-```
-
-
-<dl>
-<dt>定義
-<dd>説明
-<dt>定義付きリスト
-<dd>定義付きリストは、HTML の`&lt;dl&gt;`タグを使う
-</dl>
-
-
-### 表
-
-```
-|良い例|悪い例|コメント|
-|------|------|--------|
-|改行<br>改行|悪い例|コメント|
-```
-
-
-|良い例|悪い例|コメント|
-|------|------|--------|
-|改行<br>改行|悪い例|コメント|
-
-
-

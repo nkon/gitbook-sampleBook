@@ -4,6 +4,7 @@
         "hide-published-with",
          "numbered-headings-for-web-and-books"],
     "styles": {
+        "webstyle" : "my_website.css",
         "pdf": "my_pdf.css"
     }
 }

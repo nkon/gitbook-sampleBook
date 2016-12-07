@@ -3,7 +3,3 @@
   padding-right: 5px;
   counter-increment: h1;
 }
-
-.page .section.toc h1:before{
-  display: none;
-}

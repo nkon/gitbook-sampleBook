@@ -6,5 +6,8 @@
     "spellcheck-tech-word": true,
     "no-mix-dearu-desumasu": true,
     "preset-japanese": true,
+    "preset-jtf-style": {
+      "4.3.1.丸かっこ（）": false,
+    }
   }
 }
