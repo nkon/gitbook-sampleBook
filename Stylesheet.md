@@ -88,7 +88,7 @@ PDF版では、表紙の"Table of Contens" に"1." と不要な番号が付く�
 
 デフォルトのページテンプレートは次のところにある。
 
-`C:\Users\mm05681\AppData\Roaming\npm\node_modules\gitbook\node_modules\gitbook-plugin-theme-default\_layouts`
+`%USERPROFILE%\AppData\Roaming\npm\node_modules\gitbook\node_modules\gitbook-plugin-theme-default\_layouts`
 
 これを`/_layouts/`にコピーして編集すれば、さらにカスタマイズが可能だ。
 
