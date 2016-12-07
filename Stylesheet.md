@@ -96,13 +96,6 @@ PDF版では、表紙の"Table of Contens" に"1." と不要な番号が付く�
 
 `/_layouts/ebook/summary.html`を次のように編集する。
 
-* summary
-  + part(章)
-    - article(節)
-
-このようなデータ構造になっているので、自分の文章の構成によって、どのレベルのループを回すかを編集する。
-
-
 ```
 ｛% block page %}
 <div class="section toc">
@@ -135,3 +128,11 @@ PDF版では、表紙の"Table of Contens" に"1." と不要な番号が付く�
 </div>
 ｛% endblock %｝
 ```
+
+* summary
+    + part(章)
+        - article(節)
+
+このようなデータ構造になっているので、自分の文章の構成によって、どのレベルのループを回すかを編集する。
+上の例では、`summary.parts` から `part`を取り出し、`part.articles`から`article`をとりだし、さらに、`article`の`title`属性を取り出している。
+
