@@ -1,6 +1,11 @@
 
 # 代表的なスタイル
 
+公式のマニュアルはこちらに。
+https://github.com/GitbookIO/gitbook/blob/master/docs/syntax/markdown.md
+
+footnote機能に目新しさを感じるかもしれない。
+
 ## 見出し
 
 ```

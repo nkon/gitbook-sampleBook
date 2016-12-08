@@ -88,20 +88,13 @@ PDF版では、表紙の"Table of Contens" に"1." と不要な番号が付く�
 
 デフォルトのページテンプレートは次のところにある。
 
-`C:\Users\mm05681\AppData\Roaming\npm\node_modules\gitbook\node_modules\gitbook-plugin-theme-default\_layouts`
+`%USERPROFILE%\AppData\Roaming\npm\node_modules\gitbook\node_modules\gitbook-plugin-theme-default\_layouts`
 
 これを`/_layouts/`にコピーして編集すれば、さらにカスタマイズが可能だ。
 
 表紙に章が並ぶが、PDF版の場合は変な番号が付いてしまうので、それを削除する。
 
 `/_layouts/ebook/summary.html`を次のように編集する。
-
-* summary
-  + part(章)
-    - article(節)
-
-このようなデータ構造になっているので、自分の文章の構成によって、どのレベルのループを回すかを編集する。
-
 
 ```html
 ｛% block page %}
@@ -135,3 +128,11 @@ PDF版では、表紙の"Table of Contens" に"1." と不要な番号が付く�
 </div>
 ｛% endblock %｝
 ```
+
+* summary
+    + part(章)
+        - article(節)
+
+このようなデータ構造になっているので、自分の文章の構成によって、どのレベルのループを回すかを編集する。
+上の例では、`summary.parts` から `part`を取り出し、`part.articles`から`article`をとりだし、さらに、`article`の`title`属性を取り出している。
+
