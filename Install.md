@@ -38,7 +38,7 @@ set PATH=%PATH%;C:\Program Files\Calibre2
     ウェブページ形式で表示される。
 
 ```
-C:\N2P0\doc\gitbook-sampleBook>gitbook build
+gitbook-sampleBook>gitbook build
 info: 9 plugins are installed
 info: 7 explicitly listed
 info: loading plugin "hide-published-with"... OK
@@ -53,7 +53,7 @@ info: found 4 asset files
 warn: "page.progress" property is deprecated
 info: >> generation finished with success in 3.2s !
 
-C:\N2P0\doc\gitbook-sampleBook>gitbook serve
+gitbook-sampleBook>gitbook serve
 Live reload server started on port: 35729
 Press CTRL+C to quit ...
 
@@ -80,9 +80,9 @@ Serving book on http://localhost:4000
   + Adobe Readerなどで中身を確認する。
 
 ```
-C:\N2P0\doc\gitbook-sampleBook>set PATH=%PATH%;C:\Program Files\Calibre2
+gitbook-sampleBook>set PATH=%PATH%;C:\Program Files\Calibre2
 
-C:\N2P0\doc\gitbook-sampleBook>gitbook pdf
+gitbook-sampleBook>gitbook pdf
 info: 9 plugins are installed
 info: 7 explicitly listed
 info: loading plugin "hide-published-with"... OK
