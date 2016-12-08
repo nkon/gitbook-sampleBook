@@ -103,7 +103,7 @@ PDF版では、表紙の"Table of Contens" に"1." と不要な番号が付く�
 このようなデータ構造になっているので、自分の文章の構成によって、どのレベルのループを回すかを編集する。
 
 
-```
+```html
 ｛% block page %}
 <div class="section toc">
     <h1>｛｛ "SUMMARY"|t ｝｝</h1>

@@ -3,7 +3,7 @@
 
 `/.textlint`にルールを設定しておく。
 
-```
+```javascript
 {
   "rules": {
     "max-ten": {
